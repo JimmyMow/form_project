@@ -1,0 +1,23 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), data: {abide: true}) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %>
+    <%= f.email_field :email, :autofocus => true, required:true, pattern: 'email'  %>
+    <small class="error">Email request is not valid</small>
+  </div>
+  <% if f.object.password_required? %>
+    <div>
+      <%= f.label :password %><br />
+      <%= f.password_field :password, :autofocus => false, required: true, pattern: 'password'  %>
+      <small class='error'>Passwords must be at least 8 characters with 1 capital letter and 1 number.</small>
+    </div>
+
+    <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></div>
+  <% end %>
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
