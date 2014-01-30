@@ -1,0 +1,33 @@
+.branding {
+  padding-top: 50px;
+  text-align: center;
+  .fa-ticket {
+    font-size: 70px;
+  }
+}
+
+
+.mainbox {
+  padding-top: 50px;
+  h2, h4 {
+    text-align: center;
+  }
+  .forgot_pass {
+    // text-align: right;
+  }
+  .submit_button {
+    padding: 5px;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    input {
+      border: none;
+      background-color: inherit;
+      color: white;
+      font-size: 18px;
+      font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    }
+  }
+
+
+}
