@@ -10,7 +10,7 @@
       <%= devise_error_messages! %>
 
       <div><%= f.label :email %>
-        <%= f.email_field :email, :autofocus => true, required:true, pattern: 'email'  %>
+        <%= f.email_field :email, required:true, pattern: 'email'  %>
         <small class="error">Email request is not valid</small>
       </div><br />
       <% if f.object.password_required? %>
@@ -23,7 +23,7 @@
         <div><%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %></div>
       <% end %>
-      <div class="button submit_button"><%= f.submit "Sign up" %></div>
+      <div ><%= f.submit "Sign up", class: "button submit_button" %></div>
     <% end %>
 
     <%= render "devise/shared/links" %>
