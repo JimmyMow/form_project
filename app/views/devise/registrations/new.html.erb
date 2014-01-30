@@ -1,23 +1,31 @@
-<h2>Sign up</h2>
+<div class="branding">
+  <h2>Welcome to TicketySplit</h2>
+  <i class="fa fa-ticket"></i>
+  <h4>Share your season tickets the easy way.</h4>
+</div>
+<div class="row mainbox">
+  <div class="small-centered large-5 columns">
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), data: {abide: true}) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), data: {abide: true}) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :email %>
-    <%= f.email_field :email, :autofocus => true, required:true, pattern: 'email'  %>
-    <small class="error">Email request is not valid</small>
+      <div><%= f.label :email %>
+        <%= f.email_field :email, required:true, pattern: 'email'  %>
+        <small class="error">Email request is not valid</small>
+      </div><br />
+      <% if f.object.password_required? %>
+        <div>
+          <%= f.label :password %>
+          <%= f.password_field :password, :autofocus => false, required: true, pattern: 'password'  %>
+          <small class='error'>Passwords must be at least 8 characters with 1 capital letter and 1 number.</small>
+        </div><br />
+
+        <div><%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %></div>
+      <% end %>
+      <div ><%= f.submit "Sign up", class: "button submit_button" %></div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-  <% if f.object.password_required? %>
-    <div>
-      <%= f.label :password %><br />
-      <%= f.password_field :password, :autofocus => false, required: true, pattern: 'password'  %>
-      <small class='error'>Passwords must be at least 8 characters with 1 capital letter and 1 number.</small>
-    </div>
-
-    <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></div>
-  <% end %>
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
