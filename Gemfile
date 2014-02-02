@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#jQuery-UI
+gem 'jquery-ui-rails'
 #OmniauthTwitter
 gem 'omniauth-twitter'
 #Foundation

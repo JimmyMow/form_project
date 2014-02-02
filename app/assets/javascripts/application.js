@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.datepicker
 //= require foundation
 //= require_tree .
 $(document).foundation();
+$(document).ready(function(){
+  $("#user_birthday").datepicker();
+});
