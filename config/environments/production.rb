@@ -78,4 +78,16 @@ FormProject::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.assets.precompile += %w( vendor/modernizr.js )
+
+  ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => 'ticketysplit590@gmail.com',
+  :password       => 'ticketysplit@gmail.com',
+  :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
+
+  config.action_mailer.default_url_options = { :host => 'http://cryptic-spire-3051.herokuapp.com/' }
 end
